@@ -1,10 +1,3 @@
-/*
-
-Stimulus Template
-
-http://www.templatemo.com/tm-498-stimulus
-
-*/
 
 body {
 	background: #ffffff;
@@ -356,7 +349,7 @@ a:hover, a:active, a:focus {
 }
 
 #home .home-img {
-  background: url('../images/home-img.jpg') no-repeat;
+  background: url('../images/homeImage.jpeg') no-repeat;
   background-size: cover;
   background-position: 50% 50%;
   width: 100%;
@@ -383,7 +376,7 @@ a:hover, a:active, a:focus {
 -----------------------------------------*/
 
 #about .about-img {
-    background: url('../images/about-img.jpg') no-repeat;
+    background: url('../images/about-me.jpeg') no-repeat;
 }
 
 #about .about-thumb,
@@ -440,16 +433,11 @@ a:hover, a:active, a:focus {
 -----------------------------------------*/
 
 #experience .experience-img {
-  background: url('../images/experience-img.jpg') no-repeat;
+  background: url('../images/experience-img.jpeg') no-repeat;
 }
 
 #experience .media-heading {
-  margin-bottom: 0px;
-}
-
-#experience .media .fa {
-  font-size: 42px;
-  margin-right: 14px;
+  margin-bottom: -14px;
 }
 
 #experience small {
@@ -466,7 +454,7 @@ a:hover, a:active, a:focus {
 }
 
 #education .education-img {
-  background: url('../images/education-img.jpg') no-repeat;
+  background: url('../images/education-img.jpeg') no-repeat;
 }
 
 #education .media-heading {
