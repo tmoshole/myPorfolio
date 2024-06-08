@@ -387,9 +387,9 @@
 
                     <div class="col-md-offset-1 col-md-10 col-sm-12">
                          <h2 class="wow fadeInUp" data-wow-delay="0.8s">Click below to download my CV</h2>
-                         <a  href="./documents/TshepoMoshole.pdf" target="_blank">
+                         <a href="./documents/TshepoMoshole.pdf" target="_blank">
                               <i class="wow fadeInUp fa fa-download" data-wow-delay="0.6s"></i>
-                              
+
                          </a>
                     </div>
 
@@ -412,7 +412,7 @@
                               </div>
 
                               <div id="contact-form">
-                                   <form action="#template-mo" method="post">
+                                   <form id="contactForm">
                                         <div class="wow fadeInUp" data-wow-delay="1s">
                                              <input name="fullname" type="text" class="form-control" id="fullname"
                                                   placeholder="Your Name">
@@ -430,10 +430,14 @@
                                                   value="Send">
                                         </div>
                                    </form>
+                                   <div id="formResponse" class="color-white"></div>
                               </div>
 
                          </div>
                     </div>
+
+                    <!-- Toast container -->
+                    <div id="toast" class="toast">Thank you for your message!</div>
 
                     <div class="bg-dark col-md-3 col-sm-6">
                          <div class="contact-thumb">
@@ -471,7 +475,7 @@
                                    | Design: <a href="#" target="_parent">Tshepo Moshole</a>
                               </p>
                          </div>
-                         <ul class="wow fadeInUp social-icon" data-wow-delay="2s">
+                         <ul class="wow fadeInUp social-icon" data-wow-delay="1s">
                               <li><a href="https://web.facebook.com/tebogo.tebsa.794" class="fa fa-facebook"
                                         target="_blank"></a></li>
                               <li><a href="https://x.com/tshepomosh31" class="fa fa-twitter" target="_blank"></a></li>
