@@ -5,18 +5,34 @@
 
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-     <meta name="description" content="">
-     <meta name="keywords" content="">
-     <meta name="author" content="templatemo">
+     <meta name="description" content="Tshepo Moshole — Software Developer & Team Lead based in Pretoria, Gauteng.">
+     <meta name="keywords" content="Tshepo Moshole, Software Developer, Frontend, React, Portfolio">
+     <meta name="author" content="Tshepo Moshole">
      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+     <meta name="theme-color" content="#7c6cff">
 
-     <title>My Portfolio</title>
-     <link rel="stylesheet" href="css/bootstrap.min.css">
-     <link rel="stylesheet" href="css/animate.css">
+     <title>Tshepo Moshole — Software Developer</title>
+
+     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+
      <link rel="stylesheet" href="css/font-awesome.min.css">
-     <link rel="stylesheet" href="css/templatemo-style.css">
+     <link rel="stylesheet" href="css/style.css">
 
-     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+     <!-- inline: apply saved theme before paint to avoid flash -->
+     <script>
+          (function () {
+               var saved = localStorage.getItem('theme');
+               var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+               document.documentElement.setAttribute('data-theme', theme);
+          })();
+     </script>
 
      <!-- contact form -->
      <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
@@ -24,479 +40,468 @@
 
 </head>
 
-<body data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
-
+<body>
 
      <!-- PRE LOADER -->
-
-     <div class="preloader">
-          <div class="spinner">
-               <span class="spinner-rotate"></span>
-          </div>
+     <div class="preloader" id="preloader">
+          <div class="spinner"></div>
      </div>
 
-
-     <!-- Navigation Section -->
-
-     <div class="navbar navbar-fixed-top custom-navbar" role="navigation">
-          <div class="container">
-
-               <!-- navbar header -->
-               <div class="navbar-header">
-                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                         <span class="icon icon-bar"></span>
-                         <span class="icon icon-bar"></span>
-                         <span class="icon icon-bar"></span>
-                    </button>
-                    <a href="#" class="navbar-brand">Tshepo</a>
-               </div>
-
-               <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                         <li><a href="#home" class="smoothScroll">Home</a></li>
-                         <li><a href="#about" class="smoothScroll">About Me</a></li>
-                         <li><a href="#experience" class="smoothScroll">Experiences</a></li>
-                         <li><a href="#quotes" class="smoothScroll">Download CV</a></li>
-                         <li><a href="#contact" class="smoothScroll">Contact</a></li>
-                    </ul>
-               </div>
-
-          </div>
+     <!-- ambient background -->
+     <div class="bg-decor" aria-hidden="true">
+          <div class="blob blob-1"></div>
+          <div class="blob blob-2"></div>
+          <div class="blob blob-3"></div>
+          <div class="grain"></div>
      </div>
 
+     <!-- Navigation -->
+     <header class="navbar glass" id="navbar">
+          <a href="#home" class="brand"><span></span>Tshepo<span style="opacity:.55;font-weight:500;">.dev</span></a>
 
-     <!-- Home Section -->
+          <div class="nav-backdrop" id="navBackdrop"></div>
+          <nav class="nav-links" id="navLinks">
+               <a href="#home" class="smooth-scroll">Home</a>
+               <a href="#about" class="smooth-scroll">About</a>
+               <a href="#services" class="smooth-scroll">Services</a>
+               <a href="#experience" class="smooth-scroll">Experience</a>
+               <a href="#education" class="smooth-scroll">Education</a>
+               <a href="#contact" class="smooth-scroll">Contact</a>
+          </nav>
 
-     <section id="home" class="parallax-section">
+          <div class="nav-actions">
+               <button class="icon-btn theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode"
+                    aria-pressed="false">
+                    <i class="fa fa-moon-o" aria-hidden="true"></i>
+                    <i class="fa fa-sun-o" aria-hidden="true"></i>
+               </button>
+               <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-label="Toggle menu"
+                    aria-expanded="false">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+               </button>
+          </div>
+     </header>
+
+
+     <!-- Home / Hero -->
+     <section id="home" class="hero">
           <div class="container">
-               <div class="row">
 
-                    <div class="col-md-6 col-sm-6">
-                         <div class="home-img"></div>
+               <div class="hero-copy">
+                    <p class="eyebrow reveal">Welcome to my portfolio</p>
+                    <h1 class="reveal reveal-delay-1">Hi, I'm <span class="text-gradient">Tshepo</span> — a software
+                         developer building for the web &amp; mobile.</h1>
+                    <p class="lede reveal reveal-delay-2">Based in Pretoria, Gauteng, I design and ship clean,
+                         reliable software — from React interfaces to the teams and backends behind them.</p>
+
+                    <div class="hero-actions reveal reveal-delay-3">
+                         <a href="#contact" class="btn btn-primary smooth-scroll"><i class="fa fa-paper-plane"
+                                   aria-hidden="true"></i> Get In Touch</a>
+                         <a href="./documents/TshepoMoshole.pdf" target="_blank" class="btn btn-ghost"><i
+                                   class="fa fa-download" aria-hidden="true"></i> Download CV</a>
                     </div>
 
-                    <div class="col-md-6 col-sm-6">
-                         <div class="home-thumb">
-                              <div class="section-title">
-                                   <h4 class="wow fadeInUp" data-wow-delay="0.3s">welcome to my website</h4>
-                                   <h1 class="wow fadeInUp" data-wow-delay="0.6s">Hello, I am <strong>Tshepo</strong>
-                                        currently based in Pretoria, Gauteng.</h1>
-                                   <!-- <p class="wow fadeInUp" data-wow-delay="0.9s">I am a Software Developer who has spent
-                                        countless hours coding, debugging, and collaborating with cross-functional teams
-                                        to design and implement simple to complex software systems, utilizing a wide
-                                        range of programming languages and frameworks.</p> -->
+                    <div class="hero-stats reveal reveal-delay-3">
+                         <div>
+                              <strong>6+</strong>
+                              <span>Years Experience</span>
+                         </div>
+                         <div>
+                              <strong>10+</strong>
+                              <span>Projects Shipped</span>
+                         </div>
+                         <div>
+                              <strong>2</strong>
+                              <span>Teams Led</span>
+                         </div>
+                    </div>
+               </div>
 
-                                   <a href="#about" class="wow fadeInUp smoothScroll section-btn btn btn-success"
-                                        data-wow-delay="1.4s">Get Started</a>
+               <div class="hero-visual reveal reveal-delay-2">
+                    <div class="hero-frame">
+                         <img src="images/homeImage.jpeg" alt="Portrait of Tshepo Moshole">
+                    </div>
+                    <div class="float-chip glass chip-1"><i class="fa fa-code" aria-hidden="true"></i> Team Lead
+                         Developer</div>
+                    <div class="float-chip glass chip-2"><i class="fa fa-check" aria-hidden="true"></i> Available for
+                         work</div>
+               </div>
 
+          </div>
+
+          <a href="#about" class="scroll-cue smooth-scroll">Scroll<span></span></a>
+     </section>
+
+
+     <!-- About + Skills -->
+     <section id="about">
+          <div class="container">
+
+               <div class="section-head reveal">
+                    <p class="eyebrow">About me</p>
+                    <h2>A developer who cares about the details</h2>
+               </div>
+
+               <div class="about-grid">
+                    <div class="about-card glass reveal">
+                         <h3>Building thoughtful software, end to end</h3>
+                         <p>Senior Software Engineer with 6+ years of experience building cross-platform mobile and
+                              web applications. Specialize in React Native, React, TypeScript, Azure and cloud-based
+                              application development. Experienced leading teams, delivering offline-first enterprise
+                              mobile solutions, API integrations, App Store/Google Play deployments, and driving
+                              architecture, performance, code quality and Agile delivery.</p>
+                         <p>I stay current with industry trends and best practices, with the goal of delivering
+                              high-quality, user-friendly software that meets the needs of clients and end-users
+                              alike.</p>
+
+                         <div class="about-meta">
+                              <div>
+                                   <span>Location</span>
+                                   <strong>Pretoria, Gauteng</strong>
+                              </div>
+                              <div>
+                                   <span>Focus</span>
+                                   <strong>Web &amp; Mobile Apps</strong>
+                              </div>
+                              <div>
+                                   <span>Role</span>
+                                   <strong>Team Lead Developer</strong>
+                              </div>
+                              <div>
+                                   <span>Status</span>
+                                   <strong>Open to opportunities</strong>
                               </div>
                          </div>
                     </div>
 
+                    <div class="skills-card glass reveal reveal-delay-1">
+                         <h3>My Skills</h3>
 
+                         <div class="skill-row" style="--pct: 95%;">
+                              <div class="skill-label"><span>Frontend Development</span><span>95%</span></div>
+                              <div class="skill-track">
+                                   <div class="skill-fill"></div>
+                              </div>
+                         </div>
+
+                         <div class="skill-row" style="--pct: 30%;">
+                              <div class="skill-label"><span>Backend Development</span><span>30%</span></div>
+                              <div class="skill-track">
+                                   <div class="skill-fill"></div>
+                              </div>
+                         </div>
+
+                         <div class="skill-row" style="--pct: 95%;">
+                              <div class="skill-label"><span>React.js</span><span>95%</span></div>
+                              <div class="skill-track">
+                                   <div class="skill-fill"></div>
+                              </div>
+                         </div>
+
+                         <div class="skill-row" style="--pct: 95%;">
+                              <div class="skill-label"><span>React Native</span><span>95%</span></div>
+                              <div class="skill-track">
+                                   <div class="skill-fill"></div>
+                              </div>
+                         </div>
+
+                         <div class="skill-row" style="--pct: 90%;">
+                              <div class="skill-label"><span>iOS &amp; Android Distribution and
+                                        Maintenance</span><span>90%</span></div>
+                              <div class="skill-track">
+                                   <div class="skill-fill"></div>
+                              </div>
+                         </div>
+
+                         <div class="skill-row" style="--pct: 75%;">
+                              <div class="skill-label"><span>WordPress</span><span>75%</span></div>
+                              <div class="skill-track">
+                                   <div class="skill-fill"></div>
+                              </div>
+                         </div>
+
+                         <div class="skill-row" style="--pct: 95%;">
+                              <div class="skill-label"><span>GitHub</span><span>95%</span></div>
+                              <div class="skill-track">
+                                   <div class="skill-fill"></div>
+                              </div>
+                         </div>
+                    </div>
                </div>
+
           </div>
      </section>
 
 
-     <!-- About Section -->
-
-     <section id="about" class="parallax-section">
+     <!-- Services -->
+     <section id="services">
           <div class="container">
-               <div class="row">
 
-                    <div class="col-md-6 col-sm-12">
-                         <div class="about-thumb">
-                              <div class="wow fadeInUp section-title" data-wow-delay="0.4s">
-                                   <h1>About Me</h1>
-                                   <p class="color-yellow">An overview of myself</p>
-                              </div>
-                              <div class="wow fadeInUp" data-wow-delay="0.8s">
-                                   <p>I am a Software Developer who has spent countless hours coding, debugging, and
-                                        collaborating with cross-functional teams to design and implement simple to
-                                        complex software systems, utilizing a wide range of programming languages and
-                                        frameworks.</p>
-                                   <p> I stay up to date with the latest industry trends and best practices, all with
-                                        the ultimate goal of delivering high-quality, user-friendly software that meets
-                                        the needs of both clients and end-users.</p>
-                              </div>
-                         </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                         <div class="background-image about-img"></div>
-                    </div>
-
-                    <div class="bg-yellow col-md-3 col-sm-6">
-                         <div class="skill-thumb">
-                              <div class="wow fadeInUp section-title color-white" data-wow-delay="1.2s">
-                                   <h1>My Skills</h1>
-                                   <p class="color-white">Software . Mobile App . Web App</p>
-                              </div>
-
-                              <div class=" wow fadeInUp skills-thumb" data-wow-delay="1.6s">
-                                   <strong>Frontend Development</strong>
-                                   <span class="color-white pull-right">85%</span>
-                                   <div class="progress">
-                                        <div class="progress-bar progress-bar-primary" role="progressbar"
-                                             aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"
-                                             style="width: 85%;"></div>
-                                   </div>
-
-                                   <strong>Backend Development</strong>
-                                   <span class="color-white pull-right">70%</span>
-                                   <div class="progress">
-                                        <div class="progress-bar progress-bar-primary" role="progressbar"
-                                             aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"
-                                             style="width: 70%;"></div>
-                                   </div>
-
-                                   <strong>React.js</strong>
-                                   <span class="color-white pull-right">85%</span>
-                                   <div class="progress">
-                                        <div class="progress-bar progress-bar-primary" role="progressbar"
-                                             aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"
-                                             style="width: 85%;"></div>
-                                   </div>
-
-                                   <strong>React-Native</strong>
-                                   <span class="color-white pull-right">80%</span>
-                                   <div class="progress">
-                                        <div class="progress-bar progress-bar-primary" role="progressbar"
-                                             aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"
-                                             style="width: 80%;"></div>
-                                   </div>
-
-                                   <strong>WordPress</strong>
-                                   <span class="color-white pull-right">75%</span>
-                                   <div class="progress">
-                                        <div class="progress-bar progress-bar-primary" role="progressbar"
-                                             aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
-                                             style="width: 75%;"></div>
-                                   </div>
-                                   <strong>GitHub</strong>
-                                   <span class="color-white pull-right">90%</span>
-                                   <div class="progress">
-                                        <div class="progress-bar progress-bar-primary" role="progressbar"
-                                             aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"
-                                             style="width: 90%;"></div>
-                                   </div>
-                              </div>
-
-                         </div>
-                    </div>
-
+               <div class="section-head reveal">
+                    <p class="eyebrow">What I do</p>
+                    <h2>Services I bring to a team</h2>
                </div>
+
+               <div class="services-grid">
+                    <div class="service-card glass reveal">
+                         <div class="service-icon"><i class="fa fa-desktop" aria-hidden="true"></i></div>
+                         <h3>Web Development</h3>
+                         <p>Creating responsive and interactive websites using modern technologies and best
+                              practices.</p>
+                    </div>
+
+                    <div class="service-card glass reveal reveal-delay-1">
+                         <div class="service-icon"><i class="fa fa-mobile" aria-hidden="true"></i></div>
+                         <h3>Mobile App Development</h3>
+                         <p>Developing user-friendly mobile applications for both Android and iOS platforms.</p>
+                    </div>
+
+                    <div class="service-card glass reveal reveal-delay-2">
+                         <div class="service-icon"><i class="fa fa-users" aria-hidden="true"></i></div>
+                         <h3>Team Lead</h3>
+                         <p>Leading and mentoring development teams to deliver high-quality projects on time.</p>
+                    </div>
+
+                    <div class="service-card glass reveal reveal-delay-3">
+                         <div class="service-icon"><i class="fa fa-code" aria-hidden="true"></i></div>
+                         <h3>Clean Code</h3>
+                         <p>Writing clean, efficient, and maintainable code across various languages and frameworks.
+                         </p>
+                    </div>
+               </div>
+
           </div>
      </section>
 
 
-     <!-- Service Section -->
-
-     <section id="service" class="parallax-section">
+     <!-- Experience -->
+     <section id="experience">
           <div class="container">
-               <div class="row">
 
-                    <div class="bg-yellow col-md-3 col-sm-6">
-                         <div class="wow fadeInUp color-white service-thumb" data-wow-delay="0.8s">
-                              <i class="fa fa-desktop"></i>
-                              <h3>Web Development</h3>
-                              <p class="color-white">Creating responsive and interactive websites using modern
-                                   technologies and best practices.</p>
-                         </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                         <div class="wow fadeInUp color-white service-thumb" data-wow-delay="1.2s">
-                              <i class="fa fa-paper-plane"></i>
-                              <h3>Mobile App Developmet</h3>
-                              <p class="color-white">Developing user-friendly mobile applications for both Android and
-                                   iOS platforms.</p>
-                         </div>
-                    </div>
-
-                    <div class="bg-dark col-md-3 col-sm-6">
-                         <div class="wow fadeInUp color-white service-thumb" data-wow-delay="1.6s">
-                              <i class="fa fa-table"></i>
-                              <h3>Team Lead</h3>
-                              <p class="color-white">Leading and mentoring development teams to deliver high-quality
-                                   projects on time.</p>
-                         </div>
-                    </div>
-
-                    <div class="bg-white col-md-3 col-sm-6">
-                         <div class="wow fadeInUp service-thumb" data-wow-delay="1.8s">
-                              <i class="fa fa-html5"></i>
-                              <h3>Coding</h3>
-                              <p>Writing clean, efficient, and maintainable code across various programming languages
-                                   and frameworks.</p>
-                         </div>
-                    </div>
-
+               <div class="section-head reveal">
+                    <p class="eyebrow">Career path</p>
+                    <h2>My Experience</h2>
                </div>
+
+               <div class="timeline-wrap">
+                    <div class="timeline-visual glass reveal">
+                         <img src="images/experience-img.jpeg" alt="Working at a desk">
+                    </div>
+
+                    <div class="timeline">
+                         <div class="timeline-item reveal">
+                              <div class="timeline-card glass">
+                                   <span class="timeline-date">2025 Mar — Present</span>
+                                   <h3>Senior Frontend Developer</h3>
+                                   <p>DataBalk</p>
+                              </div>
+                         </div>
+
+                         <div class="timeline-item reveal reveal-delay-1">
+                              <div class="timeline-card glass">
+                                   <span class="timeline-date">2024 Jan — 2025 Mar</span>
+                                   <h3>Senior Frontend Developer</h3>
+                                   <p>GrowSpace</p>
+                              </div>
+                         </div>
+
+                         <div class="timeline-item reveal reveal-delay-1">
+                              <div class="timeline-card glass">
+                                   <span class="timeline-date">2023 Apr — 2025 Jan</span>
+                                   <h3>Software Developer Team Lead</h3>
+                                   <p>EdHost</p>
+                              </div>
+                         </div>
+
+                         <div class="timeline-item reveal reveal-delay-2">
+                              <div class="timeline-card glass">
+                                   <span class="timeline-date">2022 Oct — 2023 Mar</span>
+                                   <h3>Software Developer</h3>
+                                   <p>Cathel Tech</p>
+                              </div>
+                         </div>
+
+                         <div class="timeline-item reveal reveal-delay-2">
+                              <div class="timeline-card glass">
+                                   <span class="timeline-date">2021 May — 2022 Aug</span>
+                                   <h3>Software Programmer</h3>
+                                   <p>Q LINK Holdings (Pty) Ltd</p>
+                              </div>
+                         </div>
+
+                         <div class="timeline-item reveal reveal-delay-3">
+                              <div class="timeline-card glass">
+                                   <span class="timeline-date">2019 Mar — 2020 May</span>
+                                   <h3>Software Developer Learnership</h3>
+                                   <p>Jay Group</p>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+
           </div>
      </section>
 
 
-     <!-- Experience Section -->
-
-     <section id="experience" class="parallax-section">
+     <!-- Education -->
+     <section id="education">
           <div class="container">
-               <div class="row">
 
-                    <div class="col-md-6 col-sm-6">
-                         <div class="background-image experience-img"></div>
-                    </div>
+               <div class="section-head reveal">
+                    <p class="eyebrow">Learning</p>
+                    <h2>My Education</h2>
+               </div>
 
-                    <div class="col-md-6 col-sm-6">
-                         <div class="color-white experience-thumb">
-                              <div class="wow fadeInUp section-title" data-wow-delay="0.8s">
-                                   <h1>My Experiences</h1>
-                                   <p class="color-white">My Proffesional Experience</p>
+               <div class="timeline-wrap">
+                    <div class="timeline">
+                         <div class="timeline-item reveal">
+                              <div class="timeline-card glass">
+                                   <span class="timeline-date">2024 Jan — Current</span>
+                                   <h3>Bachelor's Degree, IT</h3>
+                                   <p>University of South Africa / Universiteit van Suid-Afrika</p>
                               </div>
+                         </div>
 
-                              <div class="wow fadeInUp color-white media" data-wow-delay="1.2s">
-                                   <div class="media-object media-left">
-                                   </div>
-                                   <div class="media-body">
-                                        <h3 class="media-heading"> Team Lead Sofware Developer <small>2021 May -
-                                                  Current</small>
-                                        </h3>
-                                        <p class="color-white">EdHost
-                                        </p>
-                                   </div>
+                         <div class="timeline-item reveal reveal-delay-1">
+                              <div class="timeline-card glass">
+                                   <span class="timeline-date">2020 Jul — 2022 Jul</span>
+                                   <h3>NQF 5: Systems Development, Information Technology</h3>
+                                   <p>WeThinkCode_</p>
                               </div>
+                         </div>
 
-                              <div class="wow fadeInUp color-white media" data-wow-delay="1.6s">
-                                   <div class="media-object media-left">
-                                   </div>
-                                   <div class="media-body">
-                                        <h3 class="media-heading">Freelance Senior Frontend Developer <small>2024 Jan -
-                                                  Current</small></h3>
-                                        <p class="color-white">GrowSpace
-                                        </p>
-                                   </div>
+                         <div class="timeline-item reveal reveal-delay-2">
+                              <div class="timeline-card glass">
+                                   <span class="timeline-date">2013 Feb — 2016 Nov</span>
+                                   <h3>Bachelor of Medicine, Bachelor of Surgery — MBBS</h3>
+                                   <p>Stellenbosch University · Incomplete</p>
                               </div>
-                              <div class="wow fadeInUp color-white media" data-wow-delay="1.6s">
-                                   <div class="media-object media-left">
-                                   </div>
-                                   <div class="media-body">
-                                        <h3 class="media-heading">Sofware Developer <small>2022 Oct - 2023 Mar</small>
-                                        </h3>
-                                        <p class="color-white">Cathel Tech
-                                        </p>
-                                   </div>
-                              </div>
-                              <div class="wow fadeInUp color-white media" data-wow-delay="1.6s">
-                                   <div class="media-object media-left">
-                                   </div>
-                                   <div class="media-body">
-                                        <h3 class="media-heading">Software Developer <small>2021 May - 2022 Aug</small>
-                                        </h3>
-                                        <p class="color-white">Q LINK Holdings (Pty) Ltd
-                                        </p>
-                                   </div>
-                              </div>
-                              <div class="wow fadeInUp color-white media" data-wow-delay="1.6s">
-                                   <div class="media-object media-left">
-                                   </div>
-                                   <div class="media-body">
-                                        <h3 class="media-heading">Software Developer Learner <small>2019 Mar - 2020
-                                                  May</small></h3>
-                                        <p class="color-white">Jay Group
-                                        </p>
-                                   </div>
-                              </div>
-
                          </div>
                     </div>
 
+                    <div class="timeline-visual glass reveal reveal-delay-1">
+                         <img src="images/education-img.jpeg" alt="Books and study materials">
+                    </div>
                </div>
+
           </div>
      </section>
 
 
-     <!-- Education Section -->
-
-     <section id="education" class="parallax-section">
+     <!-- Resume CTA -->
+     <section id="resume">
           <div class="container">
-               <div class="row">
-
-                    <div class="col-md-6 col-sm-6">
-                         <div class="color-white education-thumb">
-                              <div class="wow fadeInUp section-title" data-wow-delay="0.8s">
-                                   <h1>My Education</h1>
-                              </div>
-
-                              <div class="wow fadeInUp color-white media" data-wow-delay="1.2s">
-                                   <div class="media-object media-left">
-                                        <i class="fa fa-laptop"></i>
-                                   </div>
-                                   <div class="media-body">
-                                        <h3 class="media-heading">Bachelor's Degree, IT <small>2024 Jan -
-                                                  Current</small>
-                                        </h3>
-                                        <p class="color-white">University of South Africa/Universiteit van Suid-Afrika
-                                        </p>
-                                   </div>
-                              </div>
-
-                              <div class="wow fadeInUp color-white media" data-wow-delay="1.6s">
-                                   <div class="media-object media-left">
-                                        <i class="fa fa-laptop"></i>
-                                   </div>
-                                   <div class="media-body">
-                                        <h3 class="media-heading">NQF 5: Systems Development, Information Technology
-                                             <small>2020 July - 2022 July</small>
-                                        </h3>
-                                        <p class="color-white">WeThinkCode_</p>
-                                   </div>
-                              </div>
-
-                              <div class="wow fadeInUp color-white media" data-wow-delay="1.6s">
-                                   <div class="media-object media-left">
-                                        <i class="fa fa-laptop"></i>
-                                   </div>
-                                   <div class="media-body">
-                                        <h3 class="media-heading">Bachelor of Medicine, Bachelor of Surgery - MBBS,
-                                             Health/Health Care <small>2013 Feb - 2016 Nov</small>
-                                        </h3>
-                                        <p class="color-white">Stellenbosch University</p>
-                                        <p class="color-white">Incomplete</p>
-                                   </div>
-                              </div>
-
-                         </div>
-                    </div>
-
-                    <div class="col-md-6 col-sm-6">
-                         <div class="background-image education-img"></div>
-                    </div>
-
-               </div>
-          </div>
-     </section>
-
-
-     <!-- Quotes Section -->
-
-     <section id="quotes" class="parallax-section">
-          <div class="overlay"></div>
-          <div class="container">
-               <div class="row">
-
-                    <div class="col-md-offset-1 col-md-10 col-sm-12">
-                         <h2 class="wow fadeInUp" data-wow-delay="0.8s">Click below to download my CV</h2>
-                         <a href="./documents/TshepoMoshole.pdf" target="_blank">
-                              <i class="wow fadeInUp fa fa-download" data-wow-delay="0.6s"></i>
-
+               <div class="resume-panel glass reveal">
+                    <p class="eyebrow" style="justify-content:center;">Résumé</p>
+                    <h2>Want the full story?</h2>
+                    <p>Download my CV for a complete look at my experience, skills, and qualifications.</p>
+                    <div class="resume-actions">
+                         <a href="./documents/TshepoMoshole.pdf" target="_blank" class="btn btn-primary">
+                              <i class="fa fa-download" aria-hidden="true"></i> Download CV
                          </a>
                     </div>
-
                </div>
           </div>
      </section>
 
 
-     <!-- Contact Section -->
-
-     <section id="contact" class="parallax-section">
+     <!-- Contact -->
+     <section id="contact">
           <div class="container">
-               <div class="row">
 
-                    <div class="col-md-6 col-sm-12">
-                         <div class="contact-form">
-                              <div class="wow fadeInUp section-title" data-wow-delay="0.2s">
-                                   <h1 class="color-white">Say hello...</h1>
-                                   <p class="color-white">Feel free to reach out!</p>
-                              </div>
-
-                              <div id="contact-form">
-                                   <form id="contactForm">
-                                        <div class="wow fadeInUp" data-wow-delay="1s">
-                                             <input name="fullname" type="text" class="form-control" id="fullname"
-                                                  placeholder="Your Name">
-                                        </div>
-                                        <div class="wow fadeInUp" data-wow-delay="1.2s">
-                                             <input name="email" type="email" class="form-control" id="email"
-                                                  placeholder="Your Email">
-                                        </div>
-                                        <div class="wow fadeInUp" data-wow-delay="1.4s">
-                                             <textarea name="message" rows="5" class="form-control" id="message"
-                                                  placeholder="Write your message..."></textarea>
-                                        </div>
-                                        <div class="wow fadeInUp col-md-6 col-sm-8" data-wow-delay="1.6s">
-                                             <input name="submit" type="submit" class="form-control" id="submit"
-                                                  value="Send">
-                                        </div>
-                                   </form>
-                                   <div id="formResponse" class="color-white"></div>
-                              </div>
-
-                         </div>
-                    </div>
-
-                    <!-- Toast container -->
-                    <div id="toast" class="toast">Thank you for your message!</div>
-
-                    <div class="bg-dark col-md-3 col-sm-6">
-                         <div class="contact-thumb">
-                              <div class="wow fadeInUp contact-info" data-wow-delay="0.6s">
-                                   <h3 class="color-white">Address</h3>
-                                   <p>Pretoria, Gauteng</p>
-                              </div>
-
-                              <div class="wow fadeInUp contact-info" data-wow-delay="0.8s">
-                                   <h3 class="color-white">Contact.</h3>
-                                   <p><i class="fa fa-phone"></i> 071 046 0541</p>
-                                   <p><i class="fa fa-envelope-o"></i> <a
-                                             href="mailto:hello@company.co">tshepomosh31@gmail.com</a></p>
-                                   <p><i class="fa fa-globe"></i> <a href="#">company.co</a></p>
-                              </div>
-
-                         </div>
-                    </div>
-
+               <div class="section-head reveal">
+                    <p class="eyebrow">Get in touch</p>
+                    <h2>Say hello</h2>
+                    <p>Have a project in mind or just want to connect? My inbox is open.</p>
                </div>
-          </div>
-     </section>
 
+               <div class="contact-grid">
+                    <div class="contact-form-card glass reveal">
+                         <form id="contactForm">
+                              <div class="form-row form-grid">
+                                   <input name="fullname" type="text" class="form-control" id="fullname"
+                                        placeholder="Your Name" required>
+                                   <input name="email" type="email" class="form-control" id="email"
+                                        placeholder="Your Email" required>
+                              </div>
+                              <div class="form-row" style="margin-top:18px;">
+                                   <textarea name="message" rows="5" class="form-control" id="message"
+                                        placeholder="Write your message..." required></textarea>
+                              </div>
+                              <div class="form-row">
+                                   <button type="submit" class="btn btn-primary btn-block" id="submit">
+                                        <i class="fa fa-paper-plane" aria-hidden="true"></i> Send Message
+                                   </button>
+                              </div>
+                         </form>
+                         <div id="formResponse"></div>
+                    </div>
 
-     <!-- Footer Section -->
+                    <div class="contact-info-card glass reveal reveal-delay-1">
+                         <div class="contact-info-block">
+                              <h3>Address</h3>
+                              <p><i class="fa fa-map-marker" aria-hidden="true"></i> Pretoria, Gauteng</p>
+                         </div>
 
-     <footer>
-          <div class="container">
-               <div class="row">
-
-                    <div class="col-md-12 col-sm-12">
-                         <div class="wow fadeInUp footer-copyright" data-wow-delay="1.8s">
-                              <p>Copyright &copy; 2024 Tmosh
-
-                                   | Design: <a href="#" target="_parent">Tshepo Moshole</a>
+                         <div class="contact-info-block">
+                              <h3>Contact</h3>
+                              <p><i class="fa fa-phone" aria-hidden="true"></i> 071 046 0541</p>
+                              <p><i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                   <a href="mailto:tshepomosh31@gmail.com">tshepomosh31@gmail.com</a>
                               </p>
                          </div>
-                         <ul class="wow fadeInUp social-icon" data-wow-delay="1s">
-                              <li><a href="https://web.facebook.com/tebogo.tebsa.794" class="fa fa-facebook"
-                                        target="_blank"></a></li>
-                              <li><a href="https://x.com/tshepomosh31" class="fa fa-twitter" target="_blank"></a></li>
-                              <li><a href="https://github.com/tmoshole" class="fa fa-github" target="_blank"></a></li>
-                              <li><a href="https://www.linkedin.com/in/tshepo-matome-moshole-3393921ba"
-                                        class="fa fa-linkedin" target="_blank"></a></li>
-                         </ul>
-                    </div>
 
+                         <div class="contact-info-block">
+                              <h3>Elsewhere</h3>
+                              <div class="social-row">
+                                   <a href="https://web.facebook.com/tebogo.tebsa.794" class="icon-btn" target="_blank"
+                                        rel="noopener" aria-label="Facebook"><i class="fa fa-facebook"
+                                             aria-hidden="true"></i></a>
+                                   <a href="https://x.com/tshepomosh31" class="icon-btn" target="_blank" rel="noopener"
+                                        aria-label="Twitter / X"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                   <a href="https://github.com/tmoshole" class="icon-btn" target="_blank" rel="noopener"
+                                        aria-label="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>
+                                   <a href="https://www.linkedin.com/in/tshepo-matome-moshole-3393921ba"
+                                        class="icon-btn" target="_blank" rel="noopener" aria-label="LinkedIn"><i
+                                             class="fa fa-linkedin" aria-hidden="true"></i></a>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+
+          </div>
+     </section>
+
+     <!-- Toast -->
+     <div id="toast" class="toast glass">Thank you for your message!</div>
+
+     <!-- Back to top -->
+     <button class="icon-btn glass back-to-top" id="backToTop" type="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up" aria-hidden="true"></i>
+     </button>
+
+     <!-- Footer -->
+     <footer>
+          <div class="container">
+               <div class="footer-bar glass">
+                    <p>&copy; <span id="year"></span> Tshepo Moshole. All rights reserved.</p>
+                    <div class="social-row">
+                         <a href="https://web.facebook.com/tebogo.tebsa.794" class="icon-btn" target="_blank"
+                              rel="noopener" aria-label="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                         <a href="https://x.com/tshepomosh31" class="icon-btn" target="_blank" rel="noopener"
+                              aria-label="Twitter / X"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                         <a href="https://github.com/tmoshole" class="icon-btn" target="_blank" rel="noopener"
+                              aria-label="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>
+                         <a href="https://www.linkedin.com/in/tshepo-matome-moshole-3393921ba" class="icon-btn"
+                              target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin"
+                                   aria-hidden="true"></i></a>
+                    </div>
                </div>
           </div>
      </footer>
 
      <!-- SCRIPTS -->
-
-     <script src="js/jquery.js"></script>
-     <script src="js/bootstrap.min.js"></script>
-     <script src="js/jquery.parallax.js"></script>
-     <script src="js/smoothscroll.js"></script>
-     <script src="js/wow.min.js"></script>
-     <script src="js/custom.js"></script>
+     <script src="js/main.js"></script>
 
 </body>
 
